@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:meal_app/category_meals_screen.dart';
+import 'package:meal_app/screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   // const CategoryItem({super.key});
@@ -29,7 +29,7 @@ class CategoryItem extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Text(
           title,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
