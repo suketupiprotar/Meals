@@ -10,18 +10,18 @@ class FavoritesScreen extends StatefulWidget {
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
-  var _glutenFree = false;
-  var _vegetarian = false;
-  var _vegan = false;
-  var _lactoseFree = false;
+  bool _glutenFree = false;
+  bool _vegetarian = false;
+  bool _vegan = false;
+  bool _lactoseFree = false;
 
   Widget _buildSwitchListTile(String title, String description,
-      bool currentvalue, Function updateValue) {
+      bool currentvalue, Function(bool) updateValue) {
     return SwitchListTile(
       title: Text(title),
       value: currentvalue,
       subtitle: Text(description),
-      onChanged: updateValue,
+      onChanged : updateValue,
     );
   }
 
@@ -43,9 +43,11 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 'Gluten-Free',
                 'Only Include Gluten Free Meals.',
                 _glutenFree,
-                (newValue) {
+              
+                (bool  newValue) {
                   setState(() {
                     _glutenFree = newValue;
+                    
                   });
                 },
               ),
@@ -53,7 +55,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 'Lactose-Free',
                 'Only Include lactose Free Meals.',
                 _lactoseFree,
-                (newValue) {
+                (bool newValue) {
                   setState(() {
                     _lactoseFree = newValue;
                   });
@@ -63,7 +65,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 'Vegetarian',
                 'Only Include Vegetarian Free Meals.',
                 _vegetarian,
-                (newValue) {
+                (bool newValue) {
                   setState(() {
                     _vegetarian = newValue;
                   });
@@ -73,7 +75,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 'Vegan',
                 'Only Include Vegan Meals.',
                 _vegan,
-                (newValue) {
+                (bool newValue) {
                   setState(() {
                     _vegan = newValue;
                   });
